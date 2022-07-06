@@ -4,8 +4,6 @@ var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
 const saveBtns = document.querySelectorAll('.saveBtn');
 
-
-
 function setTimeBlock() {
    
     timeBlockEls.forEach((item)=>{
@@ -30,9 +28,15 @@ function setTimeBlock() {
 setTimeBlock();
 
     saveBtns.forEach(saveBtn => {
-        saveBtn.addEventListener('click', function(event){
+        $(saveBtn).on('click', function(event){
             event.preventDefault();
-            console.log('FIRE')
+            var $userInputEl = $(saveBtn).prev();
+            var $userInput = $(saveBtn).prev().val();
+            
+            localStorage.setItem('user event', $userInput);
+
+            console.log($userInput)
+
         })
     })
 
