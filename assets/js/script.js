@@ -4,7 +4,7 @@ var timeBlockArray = [8, 9, 10, 11, 12, 13, 14, 15, 16];
 var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
 var hourBlockArray = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16];
-var saveBtns = document.querySelector('.saveBtn');
+const saveBtns = document.querySelectorAll('.saveBtn');
 
 // grab each timeblock element for future reference
 var hour8 = document.querySelector('#hour8');
@@ -16,7 +16,6 @@ var hour13 = document.querySelector('#hour13');
 var hour14 = document.querySelector('#hour14');
 var hour15 = document.querySelector('#hour15');
 var hour16 = document.querySelector('#hour16');
-
 
 function setTimeBlock() {
    
@@ -41,9 +40,19 @@ function setTimeBlock() {
 
 setTimeBlock();
 
-saveBtns.addEventListener('click', function(event) {
-    // these don't work YET... working on it, will resubmit
-    event.preventDefault();
-    localStorage.setItem('time', event.target.dataset.hour)
-    localStorage.setItem('event', event.target.value)
-})
+    saveBtns.forEach(saveBtn => {
+        saveBtn.addEventListener('click', function(event){
+            console.log('FIRE')
+
+            localStorage.setItem('time', event.target.dataset.hour)
+            localStorage.setItem('event', Event.target)
+        })
+    })
+
+       
+        // these don't work YET... working on it, will resubmit
+        // event.preventDefault();
+
+
+
+    
