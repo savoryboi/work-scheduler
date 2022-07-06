@@ -27,6 +27,12 @@ textarea {
 
 .container {
   display: flex;
+  flex-direction: column;
+ 
+}
+
+.whole-block {
+  display: flex;
   flex-flow: row wrap;
 }
 
@@ -34,6 +40,8 @@ textarea {
   width: 10%;
   border-right: solid 2px #4d4d4db8;
   text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
 
 }
 .time-block {

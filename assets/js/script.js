@@ -2,7 +2,8 @@ var currentDayEl = document.querySelector('#currentDay')
 currentDayEl.innerText = moment().format('LL');
 var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
-const saveBtns = document.querySelectorAll('.saveBtn');
+
+
 
 function setTimeBlock() {
    
@@ -27,20 +28,14 @@ function setTimeBlock() {
 
 setTimeBlock();
 
-    saveBtns.forEach(saveBtn => {
-        $(saveBtn).on('click', function(event){
-            event.preventDefault();
-            var $userInputEl = $(saveBtn).prev();
-            var $userInput = $(saveBtn).prev().val();
-            
-            localStorage.setItem('user event', $userInput);
+$('.saveBtn').click(function(event){
+        event.preventDefault();
+        var $eventTimeBlock = $(this).parent().children('.time-label')
+        var $userInput = $(this).prev().val();
+        var $eventTime = $(this).parent().attr("id");
+        
+        localStorage.setItem('user event', $userInput);
+        console.log($userInput);
+        console.log($eventTime)
+})
 
-            console.log($userInput)
-
-        })
-    })
-
-
-
-
-    
