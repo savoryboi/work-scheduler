@@ -1,21 +1,10 @@
 var currentDayEl = document.querySelector('#currentDay')
 currentDayEl.innerText = moment().format('LL');
-var timeBlockArray = [8, 9, 10, 11, 12, 13, 14, 15, 16];
 var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
-var hourBlockArray = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16];
 const saveBtns = document.querySelectorAll('.saveBtn');
 
-// grab each timeblock element for future reference
-var hour8 = document.querySelector('#hour8');
-var hour9 = document.querySelector('#hour9');
-var hour10 = document.querySelector('#hour10');
-var hour11 = document.querySelector('#hour11');
-var hour12 = document.querySelector('#hour12');
-var hour13 = document.querySelector('#hour13');
-var hour14 = document.querySelector('#hour14');
-var hour15 = document.querySelector('#hour15');
-var hour16 = document.querySelector('#hour16');
+
 
 function setTimeBlock() {
    
@@ -42,16 +31,11 @@ setTimeBlock();
 
     saveBtns.forEach(saveBtn => {
         saveBtn.addEventListener('click', function(event){
+            event.preventDefault();
             console.log('FIRE')
-
-            localStorage.setItem('time', event.target.dataset.hour)
-            localStorage.setItem('event', Event.target)
         })
     })
 
-       
-        // these don't work YET... working on it, will resubmit
-        // event.preventDefault();
 
 
 
