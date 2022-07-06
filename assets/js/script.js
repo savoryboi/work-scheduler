@@ -1,7 +1,7 @@
 var currentDayEl = document.querySelector('#currentDay')
 currentDayEl.innerText = moment().format('LL');
 var timeBlockArray = [8, 9, 10, 11, 12, 13, 14, 15, 16];
-var currentHour = 13;
+var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
 var hourBlockArray = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16];
 var saveBtns = document.querySelector('.saveBtn');
