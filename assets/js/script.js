@@ -4,6 +4,7 @@ var timeBlockArray = [8, 9, 10, 11, 12, 13, 14, 15, 16];
 var currentHour = 13;
 var timeBlockEls = document.querySelectorAll('.time-block')
 var hourBlockArray = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16];
+var saveBtns = document.querySelector('.saveBtn');
 
 // grab each timeblock element for future reference
 var hour8 = document.querySelector('#hour8');
@@ -22,10 +23,16 @@ function setTimeBlock() {
     timeBlockEls.forEach((item)=>{
         if(item.dataset.hour < currentHour){
             item.classList.add('past');
+            item.classList.remove('present');
+            item.classList.remove('future');
         } else if(item.dataset.hour == currentHour){
             item.classList.add('present');
+            item.classList.remove('past');
+            item.classList.remove('future');
         } else if(item.dataset.hour > currentHour){
             item.classList.add('future');
+            item.classList.remove('past');
+            item.classList.remove('present');
         }
         
     })  
@@ -33,3 +40,7 @@ function setTimeBlock() {
 }
 
 setTimeBlock();
+
+saveBtns.addEventListener('click', function() {
+
+})
