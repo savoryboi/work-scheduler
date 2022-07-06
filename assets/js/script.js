@@ -41,6 +41,9 @@ function setTimeBlock() {
 
 setTimeBlock();
 
-saveBtns.addEventListener('click', function() {
-
+saveBtns.addEventListener('click', function(event) {
+    // these don't work YET... working on it, will resubmit
+    event.preventDefault();
+    localStorage.setItem('time', event.target.dataset.hour)
+    localStorage.setItem('event', event.target.value)
 })
