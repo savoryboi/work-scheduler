@@ -4,15 +4,15 @@ var currentHour = moment().hour();
 var timeBlockEls = document.querySelectorAll('.time-block')
 
 // loading saved data from local storage and displaying
-$("#hour8 .time-block").val(localStorage.getItem("hour8"));
-$("#hour9 .time-block").val(localStorage.getItem("hour9"));
-$("#hour10 .time-block").val(localStorage.getItem("hour10"));
-$("#hour11 .time-block").val(localStorage.getItem("hour11"));
-$("#hour12 .time-block").val(localStorage.getItem("hour12"));
-$("#hour13 .time-block").val(localStorage.getItem("hour13"));
-$("#hour14 .time-block").val(localStorage.getItem("hour14"));
-$("#hour15 .time-block").val(localStorage.getItem("hour15"));
-$("#hour16 .time-block").val(localStorage.getItem("hour16"));
+$("#hour8").val(localStorage.getItem("8am"));
+$("#hour9").val(localStorage.getItem("9am"));
+$("#hour10").val(localStorage.getItem("10am"));
+$("#hour11").val(localStorage.getItem("11am"));
+$("#hour12").val(localStorage.getItem("12pm"));
+$("#hour13").val(localStorage.getItem("1pm"));
+$("#hour14").val(localStorage.getItem("2pm"));
+$("#hour15").val(localStorage.getItem("3pm"));
+$("#hour16").val(localStorage.getItem("4pm"));
 
 // evaluate current time and color codes according to what is past, present, or future
 function setTimeBlock() {
