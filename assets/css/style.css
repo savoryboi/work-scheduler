@@ -49,6 +49,11 @@ textarea {
   text-align: center;
   border-radius: 8px;
   height: 90px;
+  transition: .222s
+}
+
+.time-block:hover {
+  background-color: rgba(255, 134, 207, 0.625);
 }
 
 .row {
@@ -88,8 +93,8 @@ textarea {
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  font-size: 40px;
+  color: rgb(219, 255, 112);
 }
 
 #currentDay {
